@@ -1,13 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Counter from './components/Counter';
+import ClassCounter from './components/ClassCounter'
+import './styles/App.css';
+import PostItem from './components/PostItem';
 
 function App() {
   const[some_text, setValue] = React.useState('Enter the text into the output');
+  const[posts, setPosts] = useState([
+    {id: 1, title: "JavaScript", body: "Description"},
+    {id: 2, title: "C++", body: "Description"},
+    {id: 3, title: "Java", body: "Description"},
+    {id: 4, title: "Python", body: "Description"},
+    {id: 5, title: "React", body: "Description"},
+  ])
   
   return (
     <div className="App">
       <div>
-        <Counter/>
+        <ClassCounter/>
         <br></br>
         <h1>{some_text}</h1>
         <input 
@@ -16,6 +26,12 @@ function App() {
         />
         
       </div>
+      <br></br> <br></br>
+      <h1 style={{textAlign: 'center'}}>List of posts:</h1>
+      {posts.map(post =>
+        <PostItem post={post} key={post.id}/>
+      )}
+      
     </div>
   );
 }

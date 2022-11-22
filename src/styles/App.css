@@ -1,0 +1,19 @@
+#root {
+    display: flex;
+    justify-content: center;
+}
+
+.post {
+    display: flex;
+    border: 4px solid #f5ef42;
+    padding: 15px;
+    justify-content: space-between;
+    align-items: center;
+    width: 800px;
+    margin-top: 30px;
+}
+
+.post_cont {
+    font-size: 22px;
+    font-family: 'Times New Roman', Times, serif;
+}
