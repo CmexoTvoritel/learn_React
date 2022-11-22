@@ -3,6 +3,7 @@ import Counter from './components/Counter';
 import ClassCounter from './components/ClassCounter'
 import './styles/App.css';
 import PostItem from './components/PostItem';
+import PostList from './components/PostList';
 
 function App() {
   const[some_text, setValue] = React.useState('Enter the text into the output');
@@ -27,10 +28,7 @@ function App() {
         
       </div>
       <br></br> <br></br>
-      <h1 style={{textAlign: 'center'}}>List of posts:</h1>
-      {posts.map(post =>
-        <PostItem post={post} key={post.id}/>
-      )}
+      <PostList posts={posts} />
       
     </div>
   );
